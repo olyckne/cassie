@@ -38,8 +38,10 @@ var Robot = (function() {
 		 * 
 		 *   return description
 		 */
-		receive: function(msg) {
-			this.response(msg);
+		receive: function(msg) {			
+			for(var i = 0; i < this.listeners.length; i++) {
+				console.log(this.listeners[i].call(msg));
+			}
 		},
 
 		respond: function(regex, callback) {
