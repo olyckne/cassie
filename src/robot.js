@@ -50,11 +50,19 @@ var Robot = (function() {
 		},
 
 		loadScripts: function(path, scripts) {
-			for(var script in scripts) {
-				try {
-					require(Path.join(path, script));
-				} catch(e) {
-					console.log(e);
+			path = Path.resolve(path);
+			var i, ext, full;
+			for(i = 0; i < scripts.length; i++) {
+				ext = Path.extname(scripts[i]);
+				full = Path.join(path, scripts[i]);
+				console.log(ext);
+				if(ext === ".coffee" || ext === ".js") {
+					try {
+						require(full)(this);
+
+					} catch(e) {
+						console.log("Can not load " + full + ": " + e);
+					}
 				}
 			}
 		},
