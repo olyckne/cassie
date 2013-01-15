@@ -19,6 +19,11 @@ Websocket = (function(base) {
 
 
 	Websocket.prototype.send = function(msg) {
+		console.log(msg);
+		this.socket.send(JSON.stringify(msg));
+	};
+
+	Websocket.prototype.reply = function(msg) {
 	};
 
 	Websocket.prototype.run = function() {
