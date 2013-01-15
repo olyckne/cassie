@@ -1,5 +1,8 @@
 var Path = require("path"),
-	Http = require("http");
+	Http = require("http"),
+	HttpClient = require("scoped-http-client"),
+	Response = require("./response"),
+	Listener = require("./listener");
 
  /**
  * Robot
