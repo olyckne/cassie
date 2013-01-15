@@ -42,8 +42,6 @@ var Robot = (function() {
 			this.response(msg);
 		},
 
-		response: function(msg) {
-			this.adapter.send("Received: "+msg);
 		},
 
 		loadScripts: function(path, scripts) {
