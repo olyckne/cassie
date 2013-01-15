@@ -1,4 +1,8 @@
 {
 	"name": "Cassie",
-	"version": "0.1.0"
+	"version": "0.1.0",
+
+	"dependencies" : {
+		"socket.io" : "0.9.x"
+	}
 }
