@@ -74,6 +74,10 @@ var Robot = (function() {
 			});
 
 			this.server.listen(port || 8080);
+		},
+
+		http: function(url) {
+			return HttpClient.create(url);
 		}
 	};	
 
