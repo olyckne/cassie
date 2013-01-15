@@ -18,6 +18,8 @@ var Robot = (function() {
 		this.adapter = adapter || "websocket";
 		if(server) this.setupServer();
 
+		this.Response = Response;
+		this.listeners = [];
 		this.name = name || "Cassie";
 	}
 
