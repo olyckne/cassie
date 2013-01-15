@@ -6,7 +6,7 @@
  * 
  */
 
-Adapter = (function() {
+var Adapter = (function() {
 
 	function Adapter(robot) {
 		this.robot = robot;
