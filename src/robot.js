@@ -42,6 +42,9 @@ var Robot = (function() {
 			this.response(msg);
 		},
 
+		respond: function(regex, callback) {
+			console.log(regex);
+			this.listeners.push(new Listener(this, regex, callback));
 		},
 
 		loadScripts: function(path, scripts) {
