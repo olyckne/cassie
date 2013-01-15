@@ -9,7 +9,7 @@ var Response = (function() {
 	Response.prototype = {
 
 		send: function() {
-			var msg = 1 <= arguments.length ? arguments : [];
+			var msg = 1 <= arguments.length ? [].slice.call(arguments, 0) : [];
 			this.robot.adapter.send(msg);
 		},
 		http: function(url) {
