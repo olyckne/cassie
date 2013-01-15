@@ -1,11 +1,11 @@
 var robot = require("./src/robot"),
-	Adapter = require("./src/adapter")
-	;
+	Adapter = require("./src/adapter"),
+	scripts = require("./enabled-scripts.json");
 
 port = 3030;
 var r = new robot("websocket", true);
 
 r.loadAdapter();
+r.loadScripts("./src/scripts", scripts);
 
-console.log(r);
-console.log(r.adapter.run());
+r.adapter.run();
