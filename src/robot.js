@@ -34,7 +34,11 @@ var Robot = (function() {
 		 *   return description
 		 */
 		receive: function(msg) {
-				
+			this.response(msg);
+		},
+
+		response: function(msg) {
+			this.adapter.send("Received: "+msg);
 		},
 
 		loadScripts: function(path, scripts) {
