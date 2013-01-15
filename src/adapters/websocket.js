@@ -18,11 +18,11 @@ Websocket = (function(base) {
 
 
 	Websocket.prototype.send = function(msg) {
-		this.socket.emit("message", "bla "+msg);
+		this.socket.send(msg);
 	};
 
 	Websocket.prototype.reply = function(msg) {
-		this.socket.emit("message", msg);
+		this.socket.send(msg);
 	};
 
 	Websocket.prototype.run = function() {
@@ -30,13 +30,14 @@ Websocket = (function(base) {
 			sio = io.listen(this.robot.server);
 		sio.on("connection", function(socket) {
 			that.socket = socket;
+			that.send("Welcome!");
 			socket.on("disconnect", function() {
 				sio.sockets.emit("User disconnected");
 			});
 
 			socket.on("message", function(data) {
 				console.log(data);
-				that.send(data);
+				that.robot.receive(data);
 			});
 		});
 	};
