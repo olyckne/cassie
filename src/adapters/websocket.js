@@ -1,5 +1,6 @@
 var Adapter = require("../adapter"),
-	io	= require("socket.io");
+	io	= require("socket.io"),
+	Message = require("../message");
 
  /**
  * Interface for a chat source
@@ -18,11 +19,6 @@ Websocket = (function(base) {
 
 
 	Websocket.prototype.send = function(msg) {
-		this.socket.send(msg);
-	};
-
-	Websocket.prototype.reply = function(msg) {
-		this.socket.send(msg);
 	};
 
 	Websocket.prototype.run = function() {
@@ -36,8 +32,10 @@ Websocket = (function(base) {
 			});
 
 			socket.on("message", function(data) {
+				var msg = new Message(data);
 				console.log(data);
-				that.robot.receive(data);
+
+				that.robot.receive(msg);
 			});
 		});
 	};
