@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 
 	"dependencies" : {
-		"socket.io" : "0.9.x"
+		"socket.io" : "0.9.x",
+		"scoped-http-client" : "0.9.x"
 	}
 }
