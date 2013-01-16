@@ -25,3 +25,16 @@ Well, you need a client
 - Write your own client
     - by communicate with [socket.io](http://socket.io)
     - or write your own adapter on the server (look in src/adapters)
+
+### Scripts
+Scripts is the cool stuff
+For now there only is two in the repo
+
+- itunes - for controlling iTunes (uses osascript so Mac only?)
+- tweet - searching twitter for a tweet
+
+Add your own by:
+
+- creating a .js file in src/scripts
+- Write the code (look at one of the existing to get the idea)
+- Add filename to enabled-scripts.json. 
