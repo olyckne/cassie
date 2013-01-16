@@ -12,7 +12,11 @@ Actually, some scripts for Hubot might work with Cassie.
 - run `npm install` in the root of Cassies directory
 - `node index.js` to start the server.
 
-If you want to customize stuff you can edit index.js and set some parameters. 
+
+### Customize
+--
+Well, you can customize some stuff by editing `index.js` and setting some parameters etc.
+
 This is gonna be better and easier.
 
 ### Client
