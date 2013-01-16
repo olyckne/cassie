@@ -20,7 +20,7 @@ Websocket = (function(base) {
 
 	Websocket.prototype.send = function(msg) {
 		console.log(msg);
-		this.socket.send(JSON.stringify(msg));
+		this.socket.send(msg);
 	};
 
 	Websocket.prototype.reply = function(msg) {
