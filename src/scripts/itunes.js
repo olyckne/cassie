@@ -9,7 +9,7 @@ module.exports = function(robot) {
 		});
 	});
 
-	robot.respond(/i(t|T)unes what is playing/, function(msg) {
+	robot.respond(/i(t|T)unes what is playing(\?)?/, function(msg) {
 		new iTunes().execute("artist of current track & \" - \" & name of current track & \" (\" & album of current track & \")\"", function(data) {
 			if(data === "") data = "Nothing's playing...";
 			msg.send(data);
@@ -22,7 +22,7 @@ module.exports = function(robot) {
 		});
 	});
 
-	robot.respond(/i(t|T)unes prev/, function(msg) {
+	robot.respond(/i(t|T)unes prev(ious)?/, function(msg) {
 		new iTunes().execute("previous track", function(data) {
 			robot.receive("itunes what is playing");
 		});
