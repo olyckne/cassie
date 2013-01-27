@@ -51,7 +51,7 @@ var Robot = (function() {
 
 		loadScripts: function(path, scripts) {
 			path = Path.resolve(path);
-			var i, ext, full;
+			var i, ext, full, _this = this;
 			for(i = 0; i < scripts.length; i++) {
 				ext = Path.extname(scripts[i]);
 				full = Path.join(path, scripts[i]);
@@ -65,6 +65,11 @@ var Robot = (function() {
 					}
 				}
 			}
+			this.respond(/help/, function(msg) {
+				for(var i = 0; i < _this.listeners.length; i++)
+					msg.send(_this.listeners[i].regex);
+			});
+
 		},
 		
 		loadAdapter: function() {
