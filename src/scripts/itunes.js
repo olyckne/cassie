@@ -65,7 +65,7 @@ module.exports = function(robot) {
 	robot.respond(/i(t|T)unes rate( (\d+))?/i, function(msg) {
 		var count = msg.match[3] || false;
 		if(count) {
-			count=count*20;	
+			count=count*20;
 			new iTunes().execute("set rating of current track to "+count, function(msg) {
 				robot.receive("itunes rate");
 			});

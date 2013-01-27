@@ -1,9 +1,9 @@
 /**
  * Interface for a chat source
- * 
+ *
  * @class Adapter
  * @constructor
- * 
+ *
  */
 
 var Adapter = (function() {
@@ -13,18 +13,18 @@ var Adapter = (function() {
 	}
 
 	Adapter.prototype = {
-		
+
 		/**
 		 * Function: send
-		 * 
+		 *
 		 * Sends a message to client
-		 * 
+		 *
 		 * Parameters:
-		 * 
+		 *
 		 *   msg - [type/description]
-		 * 
+		 *
 		 * Returns:
-		 * 
+		 *
 		 *   return description
 		 */
 		send: function(msg) {
@@ -33,15 +33,15 @@ var Adapter = (function() {
 
 		/**
 		 * Function: reply
-		 * 
+		 *
 		 * Replies to client
-		 * 
+		 *
 		 * Parameters:
-		 * 
+		 *
 		 *   msg - [type/description]
-		 * 
+		 *
 		 * Returns:
-		 * 
+		 *
 		 *   return description
 		 */
 		reply: function(msg) {
@@ -50,15 +50,15 @@ var Adapter = (function() {
 
 		/**
 		 * Function: receive
-		 * 
+		 *
 		 * Receives a message from client, dispatches it to robot
-		 * 
+		 *
 		 * Parameters:
-		 * 
+		 *
 		 *   msg - [type/description]
-		 * 
+		 *
 		 * Returns:
-		 * 
+		 *
 		 *   return description
 		 */
 		receive: function(msg) {
@@ -67,11 +67,11 @@ var Adapter = (function() {
 
 		/**
 		 * Function: run
-		 * 
+		 *
 		 * starting the bot
-		 * 
+		 *
 		 * Returns:
-		 * 
+		 *
 		 *   return description
 		 */
 		run: function() {

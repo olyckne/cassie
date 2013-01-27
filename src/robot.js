@@ -6,10 +6,10 @@ var Path = require("path"),
 
  /**
  * Robot
- * 
+ *
  * @class Robot
  * @constructor
- * 
+ *
  */
 
 var Robot = (function() {
@@ -21,24 +21,25 @@ var Robot = (function() {
 		this.Response = Response;
 		this.listeners = [];
 		this.name = name || "Cassie";
+
 	}
 
 	Robot.prototype = {
-	
+
 		/**
 		 * Function: receive
-		 * 
+		 *
 		 * Receives message, passes to listeners
-		 * 
+		 *
 		 * Parameters:
-		 * 
+		 *
 		 *   msg - [type/description]
-		 * 
+		 *
 		 * Returns:
-		 * 
+		 *
 		 *   return description
 		 */
-		receive: function(msg) {			
+		receive: function(msg) {
 			for(var i = 0; i < this.listeners.length; i++) {
 				console.log(this.listeners[i].call(msg));
 			}
@@ -71,7 +72,7 @@ var Robot = (function() {
 			});
 
 		},
-		
+
 		loadAdapter: function() {
 			try {
 				this.adapter = require("./adapters/"+this.adapter).use(this);
@@ -92,7 +93,7 @@ var Robot = (function() {
 		http: function(url) {
 			return HttpClient.create(url);
 		}
-	};	
+	};
 
 	return Robot;
 
