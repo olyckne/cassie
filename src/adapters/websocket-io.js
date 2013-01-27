@@ -4,29 +4,29 @@ var Adapter = require("../adapter"),
 
  /**
  * Interface for a chat source
- * 
+ *
  * @class Adapter
  * @constructor
- * 
+ *
  */
 
-Websocket = (function(base) {
+WebsocketIO = (function(base) {
 
-	function Websocket(robot) {
+	function WebsocketIO(robot) {
 		this.robot = robot;
-		Websocket.prototype = Object.create(base);
+		WebsocketIO.prototype = Object.create(base);
 	}
 
 
-	Websocket.prototype.send = function(msg) {
+	WebsocketIO.prototype.send = function(msg) {
 		console.log(msg);
 		this.socket.send(msg);
 	};
 
-	Websocket.prototype.reply = function(msg) {
+	WebsocketIO.prototype.reply = function(msg) {
 	};
 
-	Websocket.prototype.run = function() {
+	WebsocketIO.prototype.run = function() {
 		var that = this,
 			sio = io.listen(this.robot.server);
 		sio.on("connection", function(socket) {
@@ -45,11 +45,11 @@ Websocket = (function(base) {
 		});
 	};
 
-	return Websocket;
+	return WebsocketIO;
 
 })(Adapter);
 
 
 module.exports.use = function(robot) {
-	return new Websocket(robot);
+	return new WebsocketIO(robot);
 };

@@ -15,7 +15,7 @@ var Path = require("path"),
 var Robot = (function() {
 
 	function Robot(adapter, server, name) {
-		this.adapter = adapter || "websocket";
+		this.adapter = adapter || "websocket-io";
 		if(server) this.setupServer();
 
 		this.Response = Response;

@@ -3,7 +3,7 @@ var robot = require("./src/robot"),
 	scripts = require("./enabled-scripts.json");
 
 port = 3030;
-var r = new robot("websocket", true);
+var r = new robot("websocket-io", true);
 
 r.loadAdapter();
 r.loadScripts("./src/scripts", scripts);
