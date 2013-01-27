@@ -1,1 +1,4 @@
 node_modules
+
+# Ignore Sublime Text 2 project files (HP)
+*.sublime*
