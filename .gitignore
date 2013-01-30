@@ -1,4 +1,6 @@
 node_modules
 
+enabled-scripts.json
+
 # Ignore Sublime Text 2 project files (HP)
 *.sublime*
