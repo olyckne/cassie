@@ -10,8 +10,7 @@ Shell = (function(base) {
 
 
 	Shell.prototype.send = function(msg) {
-		console.log(toString(msg[0].msg));
-		process.stdout.write(toString(msg[0].msg));
+		console.log("\n"+msg[0]);
 	};
 
 	Shell.prototype.run = function() {
