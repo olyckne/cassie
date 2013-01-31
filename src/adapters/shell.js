@@ -11,6 +11,7 @@ Shell = (function(base) {
 
 	Shell.prototype.send = function(msg) {
 		console.log("\n"+msg[0]);
+		process.stdout.write("> ");
 	};
 
 	Shell.prototype.run = function() {
@@ -18,6 +19,7 @@ Shell = (function(base) {
 			stdin = process.openStdin();
 		stdin.setEncoding("utf8");
 
+		process.stdout.write("> ");
 		stdin.on("data", function(chunk) {
 			var msg = new Message(chunk);
 
