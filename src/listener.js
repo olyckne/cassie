@@ -10,7 +10,6 @@ var Listener = (function() {
 
 		call: function(msg) {
 			var matches = msg.match(this.regex);
-			console.log(matches);
 			if(matches) {
 				this.callback( new this.robot.Response(this.robot, msg, matches));
 				return true;

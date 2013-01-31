@@ -8,7 +8,6 @@ module.exports = function(robot) {
 			var tweets, tweet;
 			tweets = JSON.parse(body);
 
-			console.log(tweets);
 			if(tweets.results && tweets.results.length > 0) {
 				tweet = tweets.results[0];
 				return msg.send("@"+tweet.from_user+": "+tweet.text);

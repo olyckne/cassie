@@ -41,7 +41,7 @@ var Robot = (function() {
 		 */
 		receive: function(msg) {
 			for(var i = 0; i < this.listeners.length; i++) {
-				console.log(this.listeners[i].call(msg));
+				this.listeners[i].call(msg);
 			}
 		},
 
@@ -56,7 +56,6 @@ var Robot = (function() {
 			for(i = 0; i < scripts.length; i++) {
 				ext = Path.extname(scripts[i]);
 				full = Path.join(path, scripts[i]);
-				console.log(ext);
 				if(ext === ".coffee" || ext === ".js") {
 					try {
 						require(full)(this);
