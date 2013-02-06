@@ -32,13 +32,23 @@ Well, you need a client
 ### Scripts
 --
 Scripts is the cool stuff
-For now there only is two in the repo
+For now there only is three in the repo
 
 - itunes - for controlling iTunes (uses osascript so Mac only?)
+- system - for checking cassie and server uptime
 - tweet - searching twitter for a tweet by keyword
 
 Add your own by:
 
 - creating a .js file in src/scripts
-- Write the code (look at one of the existing to get the idea)
+- Write the code 
+```javascript
+module.exports = function(robot) {
+
+    robot.respond(/regex to respond to/, function(msg) {
+       // Do your cool stuff
+       msg.send(stuffToSendBack);
+    });
+};
+```
 - Add filename to enabled-scripts.json. 
