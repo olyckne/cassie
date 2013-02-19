@@ -9,7 +9,7 @@ module.exports = function(robot) {
 			tweets = JSON.parse(body);
 
 			if(tweets.results && tweets.results.length > 0) {
-				tweet = tweets.results[0];
+				tweet = msg.random(tweets.results);
 				return msg.send("@"+tweet.from_user+": "+tweet.text);
 			} else {
 				return msg.send("Didn't find tweets...");
