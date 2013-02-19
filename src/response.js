@@ -14,6 +14,9 @@ var Response = (function() {
 		},
 		http: function(url) {
 			return this.robot.http(url);
+		},
+		random: function(data) {
+			return data[Math.floor(Math.random() * data.length)];
 		}
 	};
 
