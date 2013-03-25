@@ -14,13 +14,15 @@ var Path = require("path"),
 
 var Robot = (function() {
 
-	function Robot(adapter, server, name) {
-		this.adapter = adapter || "websocket-io";
-		if(server) this.setupServer();
+	function Robot(config, name) {
+		this.config = config;
+		this.adapter = config.adapter || "websocket-io";
+		if(config.startServer) this.setupServer();
 
 		this.Response = Response;
 		this.listeners = [];
 		this.name = name || "Cassie";
+		console.log(this.config);
 
 	}
 
@@ -86,7 +88,7 @@ var Robot = (function() {
 				return res.end("Cassie");
 			});
 
-			this.server.listen(port || 8080);
+			this.server.listen(this.config.port || 8080);
 		},
 
 		http: function(url) {
