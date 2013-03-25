@@ -11,14 +11,13 @@ Actually, some scripts for Hubot might work with Cassie.
 - Make sure you have [nodejs](http://nodejs.org) installed.
 - run `npm install` in the root of Cassies directory
 - `cp enabled-scripts-sample.json enabled-scripts.json`
+- `cp config-sample.json config.json`
 - `node index.js` to start the server.
 
 
 ### Customize
 --
-Well, you can customize some stuff by editing `index.js` and setting some parameters etc.
-
-This is gonna be better and easier.
+You can customize some stuff in config.json
 
 ### Client
 --
